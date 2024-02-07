@@ -19,6 +19,7 @@ export const OpenOrders: FC = () => {
         let response: any[]
         try {
             // Cancel All Open Orders
+            response = await trader.cancelAllOrders([selectedProduct.name])
         } catch (error) {
             notify({type: 'error', message: `Error canceling all orders, ${error}`})
         } finally {
@@ -63,6 +64,3 @@ export const OpenOrders: FC = () => {
         </>
     );
 }
-
-
-
